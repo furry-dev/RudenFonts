@@ -20,6 +20,8 @@
     width: 100%
 
     .classroomLogo
+      font-weight: initial
+
       font-size: 21px
       color: white
       background-color: #368a3a
@@ -44,27 +46,3 @@
 
         path
           fill: #e8423b
-
-  .authorLink
-    font-weight: bold
-    color: #00b8d9
-
-    position: relative
-
-    &::after
-      content: ""
-      position: absolute
-      left: 50%
-      bottom: 2px
-
-      transform: translateX(-50%)
-
-      width: 0
-      height: 1px
-      background-color: #00b8d9
-
-      transition: width 0.3s ease-in-out
-
-    &:hover::after
-      width: 100%
-
