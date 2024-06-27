@@ -16,7 +16,7 @@ export default function Footer() {
                 </a></li>
             </ul>
             <div>
-                This site was created by <a href="/about" className={styles.authorLink}>Furry Dev</a> as a graduation
+                This site was created by <a href="/about">Furry Dev</a> as a graduation
                 project for <b>AFE_34</b> group
             </div>
         </footer>
