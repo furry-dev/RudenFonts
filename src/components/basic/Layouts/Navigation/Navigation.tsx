@@ -18,7 +18,7 @@ export default function Navigation(): ReactElement {
         <nav className={styles.navigate}>
             <ul className={styles.links}>
                 <li>
-                    <Link href="/public" className={`${styles.link} ${pathname === "/" ? styles.active : ""}`}>
+                    <Link href="/" className={`${styles.link} ${pathname === "/" ? styles.active : ""}`}>
                         <FontAwesomeIcon icon={faHouse} className={styles.icon}/>
                         <span className={styles.label}>Главная</span>
                     </Link>
