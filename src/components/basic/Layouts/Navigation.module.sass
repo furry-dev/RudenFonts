@@ -1,0 +1,61 @@
+.navigate
+  height: 70px
+  position: fixed
+  bottom: 0
+  left: 0
+  right: 0
+
+  z-index: 999
+
+  background-color: var(--foreground)
+
+  .links
+    height: 100%
+
+    display: flex
+    align-items: center
+    justify-content: space-around
+    list-style: none
+
+    .link
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: space-between
+
+      width: 45px
+      height: 45px
+
+      color: var(--tab-color)
+
+      &.active
+        color: var(--active-tab-color)
+
+      .icon
+        height: 24px
+        margin-bottom: 5px
+
+      .avatar
+        width: 24px
+        height: 24px
+        border-radius: 16px
+
+      .label
+        font-size: 11px
+        white-space: nowrap
+
+
+@media ((min-width: 768px))
+  .navigate
+    top: 0
+    right: initial
+    width: 120px
+    height: 100%
+
+    .links
+      flex-direction: column
+      justify-content: start
+
+      gap: 25px
+
+      padding: 40px
