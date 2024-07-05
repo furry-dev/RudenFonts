@@ -1,0 +1,16 @@
+{
+  "Navigation": {
+    "homeTabTitle": "Головна",
+    "collectionsTabTitle": "Коллекції",
+    "myListsTabTitle": "Мої списки",
+    "learnTabTitle": "Навчання"
+  },
+  "AboutMe": {
+    "name": "Руденко Максим(Furry Dev)",
+    "groupName": "Назва групи",
+    "classRoom": "ClassRoom групи",
+    "gitProfile": "GitHub профіль",
+    "trelloBoard": "Дошка Trello",
+    "site": "Сайт"
+  }
+}
