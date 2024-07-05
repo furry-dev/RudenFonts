@@ -1,7 +1,7 @@
 import Home from "@/components/screens/home/Home"
 
 async function fetchData() {
-    const res = await fetch(process.env.API_URL + "/font", {
+    const res = await fetch(process.env.API_URL + "/fonts", {
         method: "GET",
         next: {revalidate: 3600}
     })
