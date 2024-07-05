@@ -1,17 +1,19 @@
 import FontCard from "@/components/screens/home/FontCard/FontCard"
 import styles from "./Home.module.sass"
 
-export default function Home() {
+import {Font} from "@/types/font.interfaces"
+
+export default function Home({fonts}: { fonts: Font[] }) {
     return (
         <main className={styles.main}>
-            {[...Array(10)].map((_, index) => (
-                <FontCard
-                    key={index}
-                    fontName={"Pacifico"}
-                    fontUrl={"https://fonts.gstatic.com/s/pacifico/v22/FwZY7-Qmy14u9lezJ-6D6MmTpA.woff2"}
-                    format={"woff2"}
-                ></FontCard>
-            ))}
+            {fonts.map((font, index) => {
+                return (
+                    <FontCard
+                        key={index}
+                        font={font}
+                    ></FontCard>
+                )
+            })}
         </main>
     )
 }
