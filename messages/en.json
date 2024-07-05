@@ -1,0 +1,16 @@
+{
+  "Navigation": {
+    "homeTabTitle": "Home",
+    "collectionsTabTitle": "Collections",
+    "myListsTabTitle": "My Lists",
+    "learnTabTitle": "Learn"
+  },
+  "AboutMe": {
+    "name": "Rudenko Maksym(Furry Dev)",
+    "groupName": "Group name",
+    "classRoom": "Group ClassRoom",
+    "gitProfile": "GitHub profile",
+    "trelloBoard": "Trello board",
+    "site": "Site"
+  }
+}

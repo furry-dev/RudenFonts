@@ -1,22 +1,25 @@
 import Image from "next/image"
 
 import styles from "./About.module.sass"
+import {useTranslations} from "next-intl"
 
 export default function About() {
+    const t = useTranslations("AboutMe")
+
     return (
         <main className={styles.main}>
             <section className={styles.authorInfo}>
                 <Image src="/images/author-photo.jpg" alt="Фото Автора" width={300} height={400}/>
-                <h2>Руденко Максим(Furry Dev)</h2>
+                <h2>{t("name")}</h2>
                 <ul className={styles.links}>
-                    <li><strong>Назва групи:</strong> AFE_34</li>
-                    <li><strong>ClassRoom групи:</strong> <a
+                    <li><strong>{t("groupName")}:</strong> AFE_34</li>
+                    <li><strong>{t("classRoom")}:</strong> <a
                         href="https://classroom.google.com/u/1/c/NjIxNzEzMDc0ODU2">classroom.google.com</a></li>
-                    <li><strong>GitHub профіль:</strong> <a
+                    <li><strong>{t("gitProfile")}:</strong> <a
                         href="https://github.com/furry-dev/RudenFonts">github.com</a></li>
-                    <li><strong>Trello дошка:</strong> <a
+                    <li><strong>{t("trelloBoard")}:</strong> <a
                         href="https://trello.com/b/wMFV6yL3/rudenko-maksym-afe34-individual-project">trello.com</a></li>
-                    <li><strong>Сайт:</strong> <a href="https://portal.ruden.pro">Ruden</a></li>
+                    <li><strong>{t("site")}:</strong> <a href="https://portal.ruden.pro">Ruden</a></li>
                 </ul>
             </section>
             <section className={styles.bio}>
