@@ -1,7 +1,5 @@
-type fontFormat = "woff" | "woff2" | "ttf" | "eot" | "otf"
+import {Font} from "@/types/font.interfaces"
 
 export interface FontCardProps {
-    fontName: string
-    fontUrl: string
-    format: fontFormat
+    font: Font
 }
