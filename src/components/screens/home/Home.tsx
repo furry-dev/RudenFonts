@@ -11,6 +11,7 @@ export default function Home({fonts}: { fonts: Font[] }) {
                     <FontCard
                         key={index}
                         font={font}
+                        link={`/${font.family}`}
                     ></FontCard>
                 )
             })}

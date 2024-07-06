@@ -27,7 +27,7 @@ export default function Footer() {
                 </li>
             </ul>
             <div>
-                This site was created by <Link href="/about">Furry Dev</Link> as a graduation
+                This site was created by <Link href="/about" className={"underline"}>Furry Dev</Link> as a graduation
                 project for <b>AFE_34</b> group
             </div>
         </footer>
