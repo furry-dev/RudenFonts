@@ -6,10 +6,10 @@ import {Font} from "@/types/font.interfaces"
 export default function Home({fonts}: { fonts: Font[] }) {
     return (
         <main className={styles.main}>
-            {fonts.map((font, index) => {
+            {fonts.map((font) => {
                 return (
                     <FontCard
-                        key={index}
+                        key={font._id}
                         font={font}
                         link={`/${font.family}`}
                     ></FontCard>

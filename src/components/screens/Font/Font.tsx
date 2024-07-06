@@ -28,7 +28,7 @@ export default function Font({font}: FontPageProps) {
             <section>
                 <h2>Variants:</h2>
                 <div className={styles.variants}>
-                    {font.variants.map((variant, index) => <FontCard font={font} variant={variant}
+                    {font.variants.map((variant, index) => <FontCard key={index} font={font} variant={variant}
                         downloadLink={font.files[variant]}/>)}
                 </div>
             </section>
