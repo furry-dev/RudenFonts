@@ -1,4 +1,5 @@
 import Home from "@/components/screens/home/Home"
+import {notFound} from "next/navigation"
 
 async function fetchData() {
     const res = await fetch(process.env.API_URL + "/fonts", {
@@ -6,7 +7,7 @@ async function fetchData() {
         next: {revalidate: 3600}
     })
     if (!res.ok) {
-        throw new Error("Failed to fetch data")
+        return notFound()
     }
     return await res.json()
 }
