@@ -1,4 +1,5 @@
 import Font from "@/components/screens/Font/Font"
+import {notFound} from "next/navigation"
 
 interface pageParams {
     params: {
@@ -12,7 +13,7 @@ async function fetchData(fontName: string) {
         next: {revalidate: 3600}
     })
     if (!res.ok) {
-        throw new Error("Failed to fetch data")
+        return notFound()
     }
     return await res.json()
 }
