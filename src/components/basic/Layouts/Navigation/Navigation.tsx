@@ -7,6 +7,7 @@ import {faGraduationCap, faHeart, faHouse, faLayerGroup} from "@fortawesome/free
 import {ReactElement} from "react"
 import {usePathname} from "next/navigation"
 import {useTranslations} from "next-intl"
+import LocaleSelect from "@/components/basic/Locale/LocaleSelect/LocaleSelect"
 
 /**
  * Renders the footer component.
@@ -47,6 +48,7 @@ export default function Navigation(): ReactElement {
                     </Link>
                 </li>
             </ul>
+            <LocaleSelect/>
         </nav>
     )
 }

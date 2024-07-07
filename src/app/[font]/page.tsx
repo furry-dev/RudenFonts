@@ -8,14 +8,18 @@ interface pageParams {
 }
 
 async function fetchData(fontName: string) {
-    const res = await fetch(process.env.API_URL + "/fonts/" + fontName, {
-        method: "GET",
-        next: {revalidate: 3600}
-    })
-    if (!res.ok) {
+    try {
+        const res = await fetch(process.env.API_URL + "/fonts/" + fontName, {
+            method: "GET",
+            next: {revalidate: 3600}
+        })
+        if (!res.ok) {
+            return notFound()
+        }
+        return await res.json()
+    } catch (e) {
         return notFound()
     }
-    return await res.json()
 }
 
 export default async function FontPage({params}: pageParams) {
