@@ -12,5 +12,12 @@
     "gitProfile": "GitHub profile",
     "trelloBoard": "Trello board",
     "site": "Site"
+  },
+  "Learn": {
+    "selectCategory": "Select category:",
+    "start": "Start",
+    "clean": "Clean",
+    "type": "Type",
+    "translate": "Translate"
   }
 }

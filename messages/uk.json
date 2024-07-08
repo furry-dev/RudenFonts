@@ -12,5 +12,12 @@
     "gitProfile": "GitHub профіль",
     "trelloBoard": "Дошка Trello",
     "site": "Сайт"
+  },
+  "Learn": {
+    "selectCategory": "Виберіть категорію:",
+    "start": "Початок",
+    "clean": "Клін",
+    "type": "Тайп",
+    "translate": "Переклад"
   }
 }
