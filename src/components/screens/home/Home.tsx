@@ -1,4 +1,4 @@
-import FontCard from "@/components/screens/home/FontCard/FontCard"
+import FontCard from "@/components/global/FontCard/FontCard"
 import styles from "./Home.module.sass"
 
 import {Font} from "@/types/font.interfaces"

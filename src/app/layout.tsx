@@ -30,7 +30,7 @@ export default async function RootLayout({
     const messages = await getMessages()
 
     return (
-        <html lang="ru" data-theme={"dark"}>
+        <html lang={locale} data-theme={"dark"}>
             <body className={openSans.className}>
                 <NextIntlClientProvider messages={messages}>
                     <Toaster/>

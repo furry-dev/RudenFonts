@@ -5,6 +5,10 @@
     "myListsTabTitle": "Мої списки",
     "learnTabTitle": "Навчання"
   },
+  "FontPreview": {
+    "Bubble": "У від-<br/>мінності<br/>від Хомури<br/>та Хікарі, Нія<br/>не так часто<br/>фліртує зі<br/>мною.",
+    "Sound": "<a class='sound1'>Шух</a><br/><a class='sound2'>Бам!</a><br/><a class='sound3'>Лязг</a>"
+  },
   "AboutMe": {
     "name": "Руденко Максим(Furry Dev)",
     "groupName": "Назва групи",
@@ -12,5 +16,12 @@
     "gitProfile": "GitHub профіль",
     "trelloBoard": "Дошка Trello",
     "site": "Сайт"
+  },
+  "Learn": {
+    "selectCategory": "Виберіть категорію:",
+    "start": "Початок",
+    "clean": "Клін",
+    "type": "Тайп",
+    "translate": "Переклад"
   }
 }
