@@ -1,12 +1,13 @@
 "use client"
 
 import styles from "./FontCard.module.sass"
-import {FontCardProps} from "@/components/screens/home/FontCard/font-card.interfaces"
+import {FontCardProps} from "@/components/global/FontCard/font-card.interfaces"
 import React, {useEffect, useRef, useState} from "react"
 import {FontVariants} from "@/types/font.interfaces"
 import Link from "next/link"
 import {faDownload} from "@fortawesome/free-solid-svg-icons"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
+import {useTranslations} from "next-intl"
 
 function getFontFormat(fontUrl: string): string | undefined {
     const extension = fontUrl.split(/[#?]/)[0].split(".").pop()?.trim().toLowerCase()
@@ -30,10 +31,12 @@ function getFontFormat(fontUrl: string): string | undefined {
 }
 
 export default function FontCard({font, variant, link, downloadLink}: FontCardProps) {
-    const [fontVariant, setFontVariant] = useState<FontVariants>(variant || font.variants[0])
+    const [fontVariant, setFontVariant] = useState<FontVariants>(variant || Object.keys(font.files)[0] as FontVariants)
     const [fontSize, setFontSize] = useState(13)
 
     const containerRef = useRef<HTMLParagraphElement>(null)
+
+    const t = useTranslations()
 
     const fileUrl = font.files[fontVariant]!
     const fileFormat = getFontFormat(fileUrl)
@@ -50,17 +53,29 @@ export default function FontCard({font, variant, link, downloadLink}: FontCardPr
 
     const className = Math.floor((Math.random() * 100000) + 1)
 
-    const dynamicStyle = `
-                @font-face {
-                    font-family: "DynamicFont${className}";
-                    src: url("${fileUrl}") format("${fileFormat}");
-                }
+    const dynamicStyle = /*css*/`
+        @font-face {
+            font-family: "DynamicFont${className}";
+            src: url("${fileUrl}") ${fileFormat ? `format("${fileFormat}")` : ""};
+        }
 
-                .${styles.text}.font${className} {
-                    font-family: "DynamicFont${className}", sans-serif;
-                    font-size: ${fontSize * font.sizeCoeff}px;
-                }
-                `
+        .${styles.text}.font${className} {
+            font-family: "DynamicFont${className}", sans-serif;
+            font-size: ${fontSize * font.sizeCoeff}px;
+        }
+        
+        .${styles.text}.font${className} .sound1 {
+            font-size: ${fontSize * font.sizeCoeff * 2.5}px;
+        }
+        
+        .${styles.text}.font${className} .sound2 {
+            font-size: ${fontSize * font.sizeCoeff * 3}px;
+        }
+        
+        .${styles.text}.font${className} .sound3 {
+            font-size: ${fontSize * font.sizeCoeff * 2}px;
+        }
+    `
 
     const content = (
         <>
@@ -68,21 +83,16 @@ export default function FontCard({font, variant, link, downloadLink}: FontCardPr
             {downloadLink &&
                 <Link href={downloadLink} className={styles.downloadBtn}><FontAwesomeIcon icon={faDownload}
                     className={styles.icon}/></Link>}
-            {!variant && <select className={styles.variantSelect} defaultValue={font.variants[0]}
+            {!variant && <select className={styles.variantSelect} defaultValue={Object.keys(font.files)[0]}
                 onChange={e => setFontVariant((e.target.value) as FontVariants)}
                 onClick={e => e.preventDefault()}
             >
-                {font.variants.map(variant => <option key={variant} value={variant}>{variant}</option>)}
+                {Object.keys(font.files).map(variant => <option key={variant} value={variant}>{variant}</option>)}
             </select>}
-            <div className={styles.bubble}>
-                <p className={`${styles.text} font${className}`} ref={containerRef}>
-                    В отличии<br/>
-                    от Хомуры<br/>
-                    и Хикари, Ния<br/>
-                    не так часто <br/>
-                    флиртует со<br/>
-                    мной.
-                </p>
+            <div className={styles.bubble}
+                style={{background: `url("/images/${font.categories[0]}.png") center center / cover no-repeat`}}>
+                <p className={`${styles.text} font${className}`} ref={containerRef}
+                    dangerouslySetInnerHTML={{__html: t.raw(`FontPreview.${font.categories[0]}`)}}></p>
             </div>
             <div className={styles.footer}>
                 <h3 className={styles.name}>{font.family}</h3>
@@ -93,8 +103,10 @@ export default function FontCard({font, variant, link, downloadLink}: FontCardPr
 
     return (
         <>
-            {link ? <Link href={link || "#"} className={styles.card}>{content}</Link> :
-                <div className={styles.card}>{content}</div>}
+            {link ?
+                <Link draggable={false} href={link || "#"} className={styles.card}>{content}</Link> :
+                <div draggable={false} className={styles.card}>{content}</div>
+            }
         </>
     )
 }

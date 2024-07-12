@@ -1,6 +1,6 @@
 export type FontCategory = "Bubble" | "Sound" | "Decorative"
 
-export type FontVariants = "Regular" | "Bold" | "Italic" | "BoldItalic"
+export type FontVariants = "Regular" | "Bold" | "Italic" | "BoldItalic" | "Light" | "LightItalic"
 
 export interface Font {
     _id: string,

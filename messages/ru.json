@@ -5,6 +5,10 @@
     "myListsTabTitle": "Мои списки",
     "learnTabTitle": "Обучение"
   },
+  "FontPreview": {
+    "Bubble": "В отличии<br/>от Хомуры<br/>и Хикари, Ния<br/>не так часто<br/>флиртует со<br/>мной.",
+    "Sound": "<a class='sound1'>Шух</a><br/><a class='sound2'>Бам!</a><br/><a class='sound3'>Лязг</a>"
+  },
   "AboutMe": {
     "name": "Руденко Максим(Furry Dev)",
     "groupName": "Название групы",

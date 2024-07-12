@@ -1,9 +1,11 @@
 import {FontPageProps} from "@/components/screens/Font/font.interfaces"
-import FontCard from "@/components/screens/home/FontCard/FontCard"
+import FontCard from "@/components/global/FontCard/FontCard"
 
 import styles from "./Font.module.sass"
+import {FontVariants} from "@/types/font.interfaces"
 
 export default function Font({font}: FontPageProps) {
+
     return (
         <main className={styles.main}>
             <h1>{font.family}</h1>
@@ -21,15 +23,20 @@ export default function Font({font}: FontPageProps) {
                         <ul>{font.langs.map((value, index) => <li key={index}>{value}</li>)}</ul>
                     </li>
                     <li>
-                        <ul>{font.variants.map((value, index) => <li key={index}>{value}</li>)}</ul>
+                        <ul>{Object.keys(font.files).map((value, index) => <li key={index}>{value}</li>)}</ul>
                     </li>
                 </ul>
             </section>
             <section>
                 <h2>Variants:</h2>
                 <div className={styles.variants}>
-                    {font.variants.map((variant, index) => <FontCard key={index} font={font} variant={variant}
-                        downloadLink={font.files[variant]}/>)}
+                    {Object.keys(font.files).map((variant, index) => (
+                        <FontCard
+                            key={index}
+                            font={font}
+                            variant={variant as FontVariants}
+                            downloadLink={font.files[variant as FontVariants]}
+                        />))}
                 </div>
             </section>
         </main>
