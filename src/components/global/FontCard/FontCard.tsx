@@ -57,24 +57,24 @@ export default function FontCard({font, variant, link, downloadLink}: FontCardPr
 
     const dynamicStyle = /*css*/`
         @font-face {
-            font-family: "${font._id}";
+            font-family: "${font._id}_${variant}";
             src: url("${fileUrl}") ${fileFormat ? `format("${fileFormat}")` : ""};
         }
 
-        .${styles.text}.font${font._id} {
-            font-family: "${font._id}", sans-serif;
+        .${styles.text}.font-${font._id}_${variant} {
+            font-family: "${font._id}_${variant}", sans-serif;
             font-size: ${fontSize * font.sizeCoeff}px;
         }
         
-        .${styles.text}.font${font._id} .sound1 {
+        .${styles.text}.font-${font._id}_${variant} .sound1 {
             font-size: ${fontSize * font.sizeCoeff * 2.5}px;
         }
         
-        .${styles.text}.font${font._id} .sound2 {
+        .${styles.text}.font-${font._id}_${variant} .sound2 {
             font-size: ${fontSize * font.sizeCoeff * 3}px;
         }
         
-        .${styles.text}.font${font._id} .sound3 {
+        .${styles.text}.font-${font._id}_${variant} .sound3 {
             font-size: ${fontSize * font.sizeCoeff * 2}px;
         }
     `
@@ -98,7 +98,7 @@ export default function FontCard({font, variant, link, downloadLink}: FontCardPr
             <div className={styles.bubble}
                 style={{background: `url("/images/${font.categories[0]}.png") center center / cover no-repeat`}}>
                 <p
-                    className={`${styles.text} font${font._id}`}
+                    className={`${styles.text} font-${font._id}_${variant}`}
                     ref={containerRef}
                 >
 
