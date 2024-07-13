@@ -7,7 +7,7 @@ import {FontVariants} from "@/types/font.interfaces"
 import Link from "next/link"
 import {useTranslations} from "next-intl"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
-import {faDownload} from "@fortawesome/free-solid-svg-icons"
+import {faCircleCheck, faDownload} from "@fortawesome/free-solid-svg-icons"
 
 function getFontFormat(fontUrl: string): string | undefined {
     const extension = fontUrl.split(/[#?]/)[0].split(".").pop()?.trim().toLowerCase()
@@ -106,7 +106,15 @@ export default function FontCard({font, variant, link, downloadLink}: FontCardPr
             </div>
             <div className={styles.footer}>
                 <h3 className={styles.name}>{font.family}</h3>
-                {variant && <a className={styles.variant}>{variant}</a>}
+                {variant ?
+                    <a className={styles.variant}>{variant}</a> :
+                    font.freeCommercial ?
+                        <FontAwesomeIcon
+                            icon={faCircleCheck}
+                            className={styles.freeCommercial}
+                            title={"Free commercial use"}
+                        /> : ""
+                }
             </div>
         </>
     )
