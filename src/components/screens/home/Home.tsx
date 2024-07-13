@@ -1,7 +1,7 @@
-import FontCard from "@/components/global/FontCard/FontCard"
 import styles from "./Home.module.sass"
 
 import {Font} from "@/types/font.interfaces"
+import FontCard from "@/components/global/FontCard/FontCard"
 
 export default function Home({fonts}: { fonts: Font[] }) {
     return (

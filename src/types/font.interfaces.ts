@@ -9,5 +9,6 @@ export interface Font {
     langs: string[],
     variants: FontVariants[],
     files: { [key in FontVariants]?: string },
-    sizeCoeff: number
+    sizeCoeff: number,
+    freeCommercial: boolean
 }
