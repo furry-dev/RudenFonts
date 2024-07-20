@@ -20,12 +20,13 @@
     "Commercial": "Free for commercial use"
   },
   "AboutMe": {
-    "name": "Rudenko Maksym(Furry Dev)",
-    "groupName": "Group name",
-    "classRoom": "Group ClassRoom",
-    "gitProfile": "GitHub profile",
-    "trelloBoard": "Trello board",
-    "site": "Site"
+    "Name": "Rudenko Maksym(Furry Dev)",
+    "GroupName": "Group name",
+    "ClassRoom": "Group ClassRoom",
+    "GitProfile": "GitHub profile",
+    "TrelloBoard": "Trello board",
+    "Site": "Site",
+    "Bio": "<p>My name is Maksym, I come from Ukraine. I studied at the Cherkasy Secondary School of Grades I-III No. 12.</p><p>I stopped doing homework in the third grade, and for the past few years I have hardly studied at school. Instead, I helped the computer science teacher and often solved technical problems for the teachers.</p><p>In the 10th grade, I created my first website with zero knowledge, learning PHP, HTML, CSS and JS along the way. This site became a platform for manga translation, first by my own and then by a team of translators. A little later, he developed a website for his school in two weeks and received a thank you from the mayor's office after graduation. I am currently upgrading my site to a new microservices architecture.</p><p>I actively work with JavaScript, TypeScript, Node.js, PHP and Python. I tried my hand at C++, but I couldn't find where to apply it. I also tried my hand at Android development on Java and Kotlin, but we \"didn't get along\". Currently learning Rust and writing a Tauri app to help translate manga. I have already created a prototype in Python and QT that focused on finding the translation of sounds. The new application will include text translation functions, and later wedge functions.</p><p>I usually learn languages \u200B\u200Band libraries by the immersion method: I set myself the task of writing a complex project and, in the process, look for solutions as questions arise. I like to work independently, although it is much easier to work in a team when translating manga.</p><p>In my free time, I studied Japanese, but due to lack of time, I had to stop my studies. Now I know basic grammar and simple phrases like \"how about tea?\".</p>"
   },
   "Learn": {
     "selectCategory": "Select category:",
