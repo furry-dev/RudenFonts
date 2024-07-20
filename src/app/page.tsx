@@ -1,6 +1,14 @@
 import Home from "@/components/screens/home/Home"
 import {notFound} from "next/navigation"
 
+import type {Metadata} from "next"
+
+export const metadata: Metadata = {
+    title: "...",
+    description: "...",
+}
+
+
 async function fetchData() {
     try {
         const res = await fetch(process.env.API_URL + "/fonts", {
