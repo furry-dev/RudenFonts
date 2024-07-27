@@ -4,8 +4,8 @@ import {notFound} from "next/navigation"
 import type {Metadata} from "next"
 
 export const metadata: Metadata = {
-    title: "...",
-    description: "...",
+    title: "RudenFonts",
+    description: "This site presents a catalog of fonts for manga",
 }
 
 

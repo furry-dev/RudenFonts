@@ -5,7 +5,6 @@ import React from "react"
 
 import Navigation from "@/components/basic/Layouts/Navigation/Navigation"
 import {Toaster} from "react-hot-toast"
-import {ThemeLoader} from "@/components/theme/ThemeLoader"
 import Header from "@/components/basic/Layouts/Header/Header"
 import Footer from "@/components/basic/Layouts/Footer/Footer"
 import {getLocale, getMessages} from "next-intl/server"
@@ -38,7 +37,7 @@ export default async function RootLayout({
                     {children}
                     <Footer/>
                     <Navigation/>
-                    <ThemeLoader/>
+                    {/*<ThemeLoader/>*/}
                 </NextIntlClientProvider>
             </body>
         </html>
